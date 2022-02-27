@@ -20,6 +20,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/todos">Todos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/new-todo">New Todo</a>
+                    </li>
                 </ul>
             </div>
         </div>
