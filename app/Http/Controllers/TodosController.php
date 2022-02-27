@@ -17,4 +17,25 @@ class TodosController extends Controller
         return view('todos.show')->with('todo', Todo::find($todoId));
 
     }
+    public function new() {
+
+        return view('todos.create');
+
+    }
+    public function create() {
+        //get request data
+        $data = request()->all();
+
+        // assign data to new todo model
+        $todo = new Todo();
+        $todo->name = $data['name'];
+        $todo->description = $data['description'];
+        $todo->completed = false;
+
+        // save the new todo model to the database
+        $todo->save();
+
+        // redirect user back to list of todos
+        return redirect('/todos');
+    }
 }
