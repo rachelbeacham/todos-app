@@ -14,6 +14,7 @@
                 {{ $todo->description }}
             </div>
         </div>
+        <a href="/todos/{{ $todo->id }}/edit" class="btn btn-info btn-sm my-3 float-end">Edit</a>
     </div>
 </div>
 @endsection

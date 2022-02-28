@@ -23,6 +23,7 @@ class TodosController extends Controller
 
     }
     public function create() {
+
         $this->validate(request(), [
             'name' => 'required',
             'description' => 'required'
