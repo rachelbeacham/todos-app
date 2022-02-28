@@ -8,6 +8,15 @@
         <div class="card card-default">
             <div class="card-header text-center">Create New Todo</div>
             <div class="card-body">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="list-group">
+                        @foreach($errors->all() as $error)
+                            <li class="list-group-item">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="/create-todo" method="post">
                     <!--  @csrf is built in token protection from laravel to ensure post requests only come from our app, other wise they are not authorized  -->
                     @csrf
