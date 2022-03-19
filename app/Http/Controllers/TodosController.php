@@ -64,12 +64,15 @@ class TodosController extends Controller
 
         $todo->save();
 
+        session()->flash('success', 'Todo Updated Successfully.');
+
         return redirect('/todos');
     }
 
     public function delete(Todo $todo) {
 
     $todo->delete();
+    session()->flash('success', 'Todo Deleted Successfully.');
     return redirect('/todos');
 
     }
